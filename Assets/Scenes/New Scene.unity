@@ -8545,7 +8545,7 @@ Transform:
   m_GameObject: {fileID: 973628353}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.06, z: -0.019}
+  m_LocalPosition: {x: -0, y: -0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8589,8 +8589,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1407835399
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d6d4a2978abf9a340aa7e1328a18b688, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -13590,6 +13590,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7d3cbb3c5e8c6a240934ca16a611a9dc, type: 3}
   - {fileID: 21300000, guid: da3e30c9c27bc6c4ea69502a20addbc9, type: 3}
   - {fileID: 21300000, guid: a4dcf2088234d5044aea8d60f3885a2c, type: 3}
+  baseCursorScale: 5
 --- !u!1 &1602296348
 GameObject:
   m_ObjectHideFlags: 0
@@ -15134,7 +15135,7 @@ MonoBehaviour:
   m_PoseProviderComponent: {fileID: 0}
   m_TrackingType: 0
   m_UpdateType: 0
-  m_UseRelativeTransform: 0
+  m_UseRelativeTransform: 1
 --- !u!1001 &1800815455
 PrefabInstance:
   m_ObjectHideFlags: 0
