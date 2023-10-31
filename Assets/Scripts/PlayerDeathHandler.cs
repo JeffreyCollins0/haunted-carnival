@@ -17,6 +17,7 @@ public class PlayerDeathHandler : DeathHandler{
         gameObject.transform.position = startPoint.position;
         LevelResetEvent();
         fade.fadeIn();
+        dead = false;
     }
 
     public override void Hurt(){}

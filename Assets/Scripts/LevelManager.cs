@@ -16,14 +16,15 @@ public class LevelManager : MonoBehaviour{
     void nextLevel(){
         levelId += 1;
         if(levelId >= levels.Length){
-            levelId = 0;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            resetLevel();
+            return;
         }
         enableDisable();
     }
 
     void resetLevel(){
         levelId = 0;
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         enableDisable();
     }
 

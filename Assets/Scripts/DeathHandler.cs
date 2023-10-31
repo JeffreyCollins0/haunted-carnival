@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DeathHandler : MonoBehaviour{
     [SerializeField] private float duration = 1.2f;
+    protected bool dead = false;
     private float timeRemaining = -1f;
 
     void Update(){
@@ -17,8 +18,11 @@ public class DeathHandler : MonoBehaviour{
     }
 
     public void Die(){
-        timeRemaining = duration;
-        immediateOnDeath();
+        if(!dead){
+            dead = true;
+            timeRemaining = duration;
+            immediateOnDeath();
+        }
     }
 
     // called immediately when Die() is called
@@ -28,4 +32,8 @@ public class DeathHandler : MonoBehaviour{
     protected virtual void delayedOnDeath(){}
 
     public virtual void Hurt(){}
+
+    public bool isDead(){
+        return dead;
+    }
 }

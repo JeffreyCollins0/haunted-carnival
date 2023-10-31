@@ -7,6 +7,8 @@ public class Enemy : MonoBehaviour{
     [SerializeField] private BoxCollider check;
     [SerializeField] private int turnsPerAttack = 2;
 
+    DeathHandler handler;
+
     static Vector3[] checkDirections = {
         Vector3.forward,
         Vector3.back,
@@ -19,14 +21,24 @@ public class Enemy : MonoBehaviour{
 
     void Start(){
         GridMove.GridUpdateEvent += this.takeAction;
+        PlayerDeathHandler.LevelResetEvent += this.resetSelf;
         gameObject.GetComponent<HealthTracker>().hideHealth();
+        handler = gameObject.GetComponent<DeathHandler>();
     }
 
     void OnDestroy(){
         GridMove.GridUpdateEvent -= this.takeAction;
+        PlayerDeathHandler.LevelResetEvent -= this.resetSelf;
+    }
+
+    void resetSelf(){
+        check.enabled = true;
+        turnsTaken = 0;
     }
 
     private void takeAction(){
+        if(!handler.isDead()){
+
         bool playerTest = false;
         foreach(Vector3 dir in checkDirections){
             RaycastHit collisionCheck = new RaycastHit();
@@ -44,6 +56,8 @@ public class Enemy : MonoBehaviour{
                 gameObject.GetComponent<HealthTracker>().showHealth();
                 playerTest = true;
             }
+        }
+
         }
     }
 }

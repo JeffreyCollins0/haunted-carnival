@@ -18201,6 +18201,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GhostEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6553873031929495258, guid: 28e628eb2686d114785efee95d9c402b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8146054956870865899, guid: 28e628eb2686d114785efee95d9c402b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.02812481

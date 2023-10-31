@@ -12,6 +12,7 @@ public class HealthTracker : MonoBehaviour{
         maxHP = HP;
         bar.setValue(HP);
         showHealth();
+        PlayerDeathHandler.LevelResetEvent += this.resetSelf;
     }
 
     public void damage(){
@@ -35,5 +36,11 @@ public class HealthTracker : MonoBehaviour{
 
     public void hideHealth(){
         bar.hide();
+    }
+
+    void resetSelf(){
+        HP = maxHP;
+        bar.setValue(HP);
+        showHealth();
     }
 }
